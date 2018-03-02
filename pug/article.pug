@@ -1,0 +1,73 @@
+-
+    var data = 
+    {
+        header:'Статьи',
+        items:[
+                {
+                    title: 'Таблица размеров детских колгот ',
+                    data: '28 Августа, 12:19',
+                    text:'В этой статье мы опишем как правильно снять размеры для правильного подбора детских колгот',
+                    img:
+                        {src:'img/Layer 60.jpg',
+                         alt:'alt-text'
+                        }
+                },
+                {
+                    title: 'Актуальные вопросы: можно ли постирать коляску и как правильно это сделать?',
+                    data: '28 Августа, 12:19',
+                    text:'',
+                    img:''
+
+                },
+               {
+                title: 'Полезно или вредно? Какие игрушки стоит выбирать?',
+                data: '28 Августа, 12:19',
+                text:'',
+                img:''
+                }, 
+                {
+                title: 'Лучшие игрушки и игры для развития моторики',
+                data: '28 Августа, 12:19',
+                text:'',
+                img:''
+                }, 
+                {
+                title: 'Подарок имениннику на 9 лет',
+                data: '28 Августа, 12:19',
+                text:'В этой статье мы опишем как правильно снять размеры для правильного подбора детских колгот',
+                img:
+                        {src:'img/Layer 61.jpg',
+                         alt:'alt-text'
+                        }
+                }, 
+                {
+                title: 'Рейтинг самых популярных игрушек 2016 года',
+                data: '28 Августа, 12:19',
+                text:'',
+                img:''
+                } 
+                
+              ]       
+    }
+
+mixin value(items)
+    if items.img == ''
+        li.col.col_smal
+            h2
+                a(href='').title=items.title
+            p.data=items.data
+    else
+        li.col.col_big
+            img.img(src=items.img.src alt=items.img.alt)
+            h2
+                a(href='').title=items.title
+            p.data=items.data
+            p.item=items.text
+
+mixin template()
+    div
+        h1.mainTitle=data.header
+        ul.row
+            for val in data.items
+                +value(val)
+
